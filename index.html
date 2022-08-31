@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Phone Hunter</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <nav class="navbar bg-light container">
+            <div class="container-fluid">
+                <a class="navbar-brand nav-title fw-bold fs-1">Phone Hunter</a>
+                <form class="d-flex" role="search">
+                    <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                        id="btn-field"
+                    />
+                    <button class="btn btn-primary" type="submit" id="button">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </nav>
+
+        <main class="container mt-5">
+            <h1 style="color: red" class="d-none" id="error">
+                Sorry!! please enter valid search!
+            </h1>
+            <div
+                class="row row-cols-1 row-cols-md-3 g-4"
+                id="card-container"
+            ></div>
+        </main>
+
+        <!-- Bootstrap file -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- js -->
+        <script src="script.js"></script>
+    </body>
+</html>
