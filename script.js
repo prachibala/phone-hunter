@@ -9,12 +9,14 @@ const displayPhones = (phones) => {
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = " ";
     // ----------Error Condition------------->
+
     const error = document.getElementById("error");
     if (phones.length === 0) {
         error.classList.remove("d-none");
     } else {
         error.classList.add("d-none");
     }
+    // -----------------------------------------
     phones.forEach((phone) => {
         const phoneDiv = document.createElement("div");
         phoneDiv.classList.add("col");
@@ -33,12 +35,30 @@ const displayPhones = (phones) => {
         `;
         cardContainer.appendChild(phoneDiv);
     });
+
+    // <----------------------Stop Loader------------------->
+    toggleSpinner(false);
 };
+
 document.getElementById("button").addEventListener("click", function (e) {
     e.preventDefault();
+
+    // <----------------------Start Loader------------------->
+    toggleSpinner(true);
+
     const buttonField = document.getElementById("btn-field");
     const buttonValue = buttonField.value;
     loadPhones(buttonValue);
 });
+
+// ------------------------loader------------------->
+const toggleSpinner = (isLoading) => {
+    const loaderSection = document.getElementById("loader");
+    if (isLoading) {
+        loaderSection.classList.remove("d-none");
+    } else {
+        loaderSection.classList.add("d-none");
+    }
+};
 
 // loadPhones();
